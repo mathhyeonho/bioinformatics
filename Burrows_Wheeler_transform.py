@@ -1,6 +1,6 @@
 # The pre-requisites
 
-data = "codespeedy"
+data = "SIX.MIXED.PIXIES.SIFT.SIXTY.PIXIE.DUST.BOXES"
 # change to code download? txt file data after
 
 data += '$'
@@ -17,17 +17,36 @@ for i in range(len(words)):
     data = new
     list.append(new)
 
-print(list)
 
 # Sorting elements alphabetically/lexicographically
 
 sort = sorted(list)
 
-print(sort)
 
 # Extracting last characters
+
+result = []
 
 for i in range(len(words)):
     element = sort[i]
     last = element[-1]
-    print(last)
+    result.append(last)
+print('transformed = ', ''.join(result))
+
+# inverBWT
+
+invert = ['' for _ in range(len(result))]
+print(invert)
+
+num = len(result)
+
+for i in range(num):
+    for j in range(num):
+        invert[j] = result[j] + invert[j]
+    invert.sort()
+    print(invert)
+
+print('inverted = ', invert[0])
+
+
+    
